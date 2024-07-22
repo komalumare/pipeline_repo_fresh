@@ -34,10 +34,5 @@ pipeline {
                 mail bcc: '', body: 'this is a mial from the declarative pipeline', cc: '', from: '', replyTo: '', subject: 'regarding declarative pipeline', to: 'te415606@gmail.com'
             }
         }
-        stage('Tomcat') {
-            steps {
-                deploy adapters: [tomcat8(credentialsId: '8f9e4a48-90b7-4b3e-a2d3-6e6706eb89ae', path: '', url: 'http://localhost:8282/')], contextPath: 'pipeline_inti_github', war: '**/*.war'
-            }
-        }
     }
 }
