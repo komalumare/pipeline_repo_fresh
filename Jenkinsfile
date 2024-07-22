@@ -17,6 +17,11 @@ pipeline {
                 bat 'mvn install'
             }
         }
+        stage('package') {
+            steps {
+                bat 'mvn package'
+            }
+        }
         stage('Results') {
             steps {
                 input 'do you want to proceed'
