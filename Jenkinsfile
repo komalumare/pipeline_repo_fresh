@@ -24,5 +24,10 @@ pipeline {
                 archiveArtifacts 'target/*.jar'
             }
         }
+        stage('Email') {
+            steps {
+                mail bcc: '', body: 'this is a mial from the declarative pipeline', cc: '', from: '', replyTo: '', subject: 'regarding declarative pipeline', to: 'te415606@gmail.com'
+            }
+        }
     }
 }
